@@ -14,11 +14,11 @@ export default defineConfig({
   server: {
     port: 3001,
     proxy: {
-      '/api': {
+      '/attu/api': {
         target: 'http://localhost:3000',
         changeOrigin: true,
       },
-      '/socket.io': {
+      '/attu/socket.io': {
         target: 'http://localhost:3000',
         ws: true,
       },

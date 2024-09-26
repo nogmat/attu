@@ -402,7 +402,9 @@ export const DataProvider = (props: { children: React.ReactNode }) => {
       setDatabase(authReq.database);
 
       // create socket
-      socket.current = isElectron ? io(url as string) : io();
+      socket.current = isElectron ? io(url as string) : io(window.location.host, {
+        path: "/attu/socket.io"
+      });
       // register client
       socket.current.emit(WS_EVENTS.REGISTER, clientId);
 

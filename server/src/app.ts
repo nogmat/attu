@@ -77,13 +77,13 @@ app.use(LoggingMiddleware);
 // All headers operations
 app.use(ReqHeaderMiddleware);
 // use router
-app.use('/api/v1', router);
+app.use('/attu/api/v1', router);
 // Return client build files
-app.use(express.static('build'));
+app.use('/attu', express.static('build'));
 
 // handle every other route with index.html, which will contain
 // a script tag to your application's JavaScript file(s).
-app.get('*', (request, response) => {
+app.get('/attu/*', (request, response) => {
   response.sendFile(path.join(__dirname, '../build/index.html'));
 });
 // ErrorInterceptor

@@ -14,7 +14,7 @@ export const isElectron =
 export const url = hostUrl[isElectron ? 'electron' : import.meta.env.MODE];
 
 const axiosInstance = axios.create({
-  baseURL: `${url}/api/v1`,
+  baseURL: `${url}/attu/api/v1`,
   timeout: 60000 * 5, // 5 minutes
 });
 

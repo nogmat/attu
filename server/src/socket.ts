@@ -9,6 +9,7 @@ export let clients = new Map<string, Socket>();
 
 export function initWebSocket(server: http.Server) {
   io = new Server(server, {
+    path: '/attu/socket.io/',
     cors: {
       origin: '*',
       methods: ['GET', 'POST'],
